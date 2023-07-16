@@ -116,9 +116,6 @@ function getData() {
             // hideModal()
         })
 }
-
-getData()
-
 setTimeout(getData, 12000);
 
 
