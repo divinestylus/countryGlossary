@@ -22,35 +22,17 @@
      font-family: 'Nunito Sans', sans-serif;
  }
 
- section.search-country {
-     display: grid;
-     justify-content: center;
-     /* background-image: url(../assets/logo-01.png); */
-     background-size: contain;
-     padding: 8rem 0;
-     background-color: var(--lightBlue);
+ i {
+     cursor: pointer;
  }
 
- .search-bar {
-     display: block;
-     width: 400px;
-     outline: transparent;
-     padding: 1rem;
-     border: 0;
-     border-radius: 4px;
-     background: var(--darkBlue);
-     color: var(--offWhite);
+ .hero-section {
+     display: flex;
+     flex-direction: column;
  }
 
- .search-bar::placeholder {
-     color: var(--lightBlue);
- }
-
- section.countries {
+ section.navbar {
      padding: 3rem;
- }
-
- .continent-search {
      display: flex;
      align-items: center;
      justify-content: space-between;
@@ -60,54 +42,124 @@
      width: 200px;
  }
 
+ .theme-toggler {
+     display: none;
+     align-items: center;
+     cursor: pointer;
+ }
+
+ .theme-toggler:hover .theme {
+     color: var(--offWhite);
+ }
+
+ .theme-toggler i {
+     font-size: 1.8rem;
+     color: var(--lightBlue);
+     transition: color 0.2s ease-in-out;
+ }
+
+ .theme-toggler p {
+     padding-inline-start: 0.5rem;
+     color: var(--lightBlue);
+     transition: color 0.2s ease-in-out;
+     display: none;
+ }
+
+ .search-dropdown {
+     display: flex;
+     padding: 0 3rem;
+     flex-direction: column;
+     justify-content: space-between;
+ }
+
+ .search-bar {
+     display: block;
+     outline: transparent;
+     padding: 1rem;
+     border: 0;
+     border-radius: 4px;
+     background: var(--blue);
+     color: var(--offWhite);
+ }
+
+ .search-bar::placeholder {
+     color: var(--lightBlue);
+ }
+
  select {
-    cursor: pointer;
-     padding: 0.5rem;
+     cursor: pointer;
+     padding: 1rem;
      border: 0;
      border-radius: 4px;
      outline: 0;
-     background: var(--lightBlue);
-     color: var(--offWhite);
+     margin-block-start: 2rem;
+     background: var(--blue);
+     color: var(--lightBlue);
+ }
+
+ section.countries {
+     padding: 0 3rem 3rem 3rem;
  }
 
  .country-list {
      padding: 3rem 0;
      display: grid;
      gap: 2rem;
-     grid-template-columns: repeat(4, 1fr);
+     grid-template-columns: 1fr;
  }
 
  .wordmark {
      display: block;
-     margin: -2rem auto 0 auto;
-     width: 25%;
+     margin: 5rem auto 0 auto;
+     width: 280px;
      animation: spin 9s ease-in-out both infinite alternate 4s;
  }
 
+
+
+
+
+
  @keyframes spin {
-    100% {
-        transform: rotate(360deg);
-    }
+     100% {
+         transform: rotate(360deg);
+     }
  }
 
  .error-msg {
-    color: var(--lightBlue);
-    text-align: center;
-    width: 100%;
+     color: var(--lightBlue);
+     text-align: center;
+     width: 100%;
  }
- 
+
  .country-card {
      background-color: var(--blue);
      color: var(--offWhite);
      border-radius: 4px;
      cursor: pointer;
+     transition: fade-in 2s ease-in-out;
      transition: transform 0.2s ease-in-out;
  }
- 
+
+
+
+
+
+
+ @keyframes fade-in {
+     0% {
+         filter: brightness(0%);
+     }
+
+     100% {
+         filter: brightness(100%);
+     }
+ }
+
  .country-card:hover {
      transform: scale(0.9);
  }
- 
+
  .country-card img {
      display: block;
      margin: 0 auto;
@@ -141,51 +193,164 @@
      padding-block: 0 1.5rem;
  }
 
-@media(max-width: 1360px) {
-    .country-list{
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .wordmark {
-        width: 35%;
-    }
-}
 
 
-@media(max-width: 1024px) {
-    .country-list{
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .wordmark {
-        width: 40%;
-    }
-}
 
 
-@media(max-width: 720px) {
-    .country-list{
-        grid-template-columns: 1fr;
-    }
-    .continent-search {
-        flex-direction: column;
-    }
-    select {
-        margin-block-start: 1.5rem;
-    }
-    .search-bar {
-        width: 300px;
-    }
-    .wordmark {
-        margin: 2rem auto 0 auto;
-        width: 70%;
-    }
-}
 
-@media(max-width: 360px) {
-    .search-bar {
-        width: 200px;
-    }
-    .wordmark {
-        margin: 4rem auto 0 auto;
-        width: 80%;
-    }
-}
+ .modal {
+     display: none;
+     position: fixed;
+     padding: 3rem;
+     z-index: 2;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     margin: 3rem;
+     background-color: var(--darkBlue);
+     border-radius: 4px;
+ }
+
+ .modal-body {
+     display: grid;
+     align-items: center;
+     gap: 2rem;
+     margin-block-start: 3rem;
+     grid-template-columns: 1fr;
+ }
+
+ .cancel {
+     display: flex;
+     justify-content: end;
+ }
+
+ .cancel-btn {
+    padding: 1rem;
+    border: 1px solid red;
+ }
+
+ .flag {
+     width: 100%;
+     border-radius: 4px;
+ }
+
+ .overlay {
+     display: none;
+     height: 100%;
+     position: fixed;
+     z-index: 1;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     opacity: 0.5;
+     background-color: var(--blue);
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /******* Responsive Design *******/
+
+
+ @media(min-width: 400px) {
+     .country-card img {
+         width: 100%;
+         height: 200px;
+     }
+ }
+
+
+ @media(min-width: 600px) {
+     .theme-toggler p {
+         display: block;
+     }
+
+     .country-list {
+         grid-template-columns: repeat(2, 1fr);
+     }
+
+     .wordmark {
+         width: 340px;
+     }
+
+     .country-card img {
+         width: 100%;
+         height: 180px;
+     }
+ }
+
+
+ @media(min-width: 900px) {
+     .hero-section {
+         flex-direction: column-reverse;
+     }
+
+     section.navbar {
+         padding: 3rem;
+     }
+
+     .app-name {
+         width: 180px;
+     }
+
+     .search-dropdown {
+         flex-direction: row;
+         justify-content: center;
+         background-color: var(--lightBlue);
+         padding: 8rem 3rem;
+     }
+
+     .search-bar {
+         width: 40%;
+         margin-inline-end: 1rem;
+         background-color: var(--darkBlue);
+     }
+
+     select {
+         background-color: var(--darkBlue);
+         margin: 0;
+     }
+
+     .country-list {
+         grid-template-columns: repeat(3, 1fr);
+     }
+
+     .wordmark {
+         margin: -6rem auto 0 auto;
+         width: 400px;
+     }
+ }
+
+
+ @media(min-width: 1140px) {
+     .country-list {
+         grid-template-columns: repeat(4, 1fr);
+     }
+
+     .modal-body {
+         grid-template-columns: repeat(2, 1fr);
+         padding-block: 5rem;
+     }
+ }

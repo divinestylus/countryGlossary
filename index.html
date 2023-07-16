@@ -6,35 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=\, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Country Glossary App</title>
 </head>
 
 <body>
     <main class="wrapper">
-        <section class="search-country">
-            <input type="text" class="search-bar" placeholder="Search">
-        </section>
-        <section class="countries">
-
-            <div class="continent-search">
+        <section class="hero-section">
+            <section class="navbar">
                 <img src="./assets/logo-01.png" alt="" class="app-name">
+                <div class="theme-toggler">
+                    <i class="fa-solid fa-sun theme"></i>
+                    <p class="theme">Light mode</p>
+                </div>
+            </section>
+
+            <section class="search-dropdown">
+                <input type="text" class="search-bar" placeholder="Search">
                 <select>
-                    <option disabled selected>Select Continent</option>
-                    <option value="Africa">Africa</option>
+                    <option value="Africa" selected>Africa</option>
                     <option value="North America">North America</option>
                     <option value="South America">South America</option>
                     <option value="Europe">Europe</option>
                     <option value="Asia">Asia</option>
                     <option value="Oceania">Oceania</option>
                 </select>
-            </div>
-
+            </section>
+        </section>
+        <section class="countries">
             <img src="./assets/wordmark-02.png" alt="" class="wordmark">
             <div class="country-list"></div>
-
         </section>
+        <section class="modal">
+            <div class="cancel">
+                <i class="fa-solid fa-xmark cancel-btn"></i>
+            </div>
+        </section>
+        <div class="overlay"></div>
     </main>
-    <script src="./js/script.js"></script>
 </body>
 
 </html>
