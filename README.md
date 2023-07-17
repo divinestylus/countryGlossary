@@ -1,2 +1,2 @@
-# practiceProject-CG
+<img src = "./assets/logo">
 Country Glossary App
