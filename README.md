@@ -13,6 +13,7 @@
 <img src = "./assets/darkTheme.jpg" alt = "Country Glossary Project Logo" width = "100%">
 <img src = "./assets/lightTheme.jpg" alt = "Country Glossary Project Logo" width = "100%">
 
+<br>
 <img src = "./assets/wordmark-02.png" alt = "Country Glossary Project Logo" width = "250px">
 <br>
 
