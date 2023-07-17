@@ -1,2 +1,3 @@
-<img src = "./assets/logo">
+<img src = "./assets/logo-01.png">
+
 Country Glossary App
