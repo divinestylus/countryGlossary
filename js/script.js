@@ -2,9 +2,13 @@ let continentList = document.querySelector('select'),
     searchBar = document.querySelector('.search-bar'),
     countries = document.querySelector('.countries'),
     wordmark = document.querySelector('.wordmark'),
-    countryList = document.querySelector('.country-list'),
+    searchDropdown = document.querySelector('.search-dropdown');
+countryList = document.querySelector('.country-list'),
     modal = document.querySelector('.modal'),
-    overlay = document.querySelector('.overlay');
+    overlay = document.querySelector('.overlay'),
+    themeBtn = document.querySelector('.theme-toggler'),
+    themeBtnText = document.querySelector('.theme-name'),
+    themeIcon = document.querySelector('.theme-toggler i');
 
 
 
@@ -15,6 +19,7 @@ searchBar.disabled = true;
 function changeValue() {
     continentList.addEventListener('change', event => {
         getData();
+        searchBar.value = "";
     })
 }
 changeValue();
@@ -65,9 +70,9 @@ function getData() {
 
 
 
-
             function showModal() {
                 for (let i = 0; i < data.length; i++) {
+
                     if (data[i].continents[0] === continentList.value) {
                         countryCard.forEach((country) => {
                             country.addEventListener('click', () => {
@@ -84,38 +89,52 @@ function getData() {
                                     <div class = "modal-body"> 
                                         <img src="${data[i].flags.svg}" alt="Country Flag" class="flag">
                                         <div>
-                                            <p class="para country-name">${data[i].name.common}</p>
-                                            <p class="para country-capital"><strong>Capital:</strong> ${data[i].capital}</p>
-                                            <p class="para country-capital"><strong>Population:</strong> ${cPopulation}</p>
-                                            <p class="para country-capital"><strong>Region:</strong> ${data[i].region}</p>
-                                            <p class="para country-capital"><strong>Sub Region:</strong> ${data[i].subregion}</p>
-                                            <p class="para country-capital"><strong>Timezone:</strong> ${data[i].timezones}</p>
+                                            <p class="modal-name">${data[i].name.common}</p>
+                                            <p class="modal-capital"><strong>Capital:</strong> ${data[i].capital}</p>
+                                            <p class="modal-population"><strong>Population:</strong> ${cPopulation}</p>
+                                            <p class="modal-region"><strong>Region:</strong> ${data[i].region}</p>
+                                            <p class="modal-subregion"><strong>Sub Region:</strong> ${data[i].subregion}</p>
+                                            <p class="modal-timezone"><strong>Timezone:</strong> ${data[i].timezones[0]}</p>
                                         </div>
                                     </div>
                                     `;
-                                    let cancelBtn = document.querySelector('.cancel');
-                                    console.log(cancelBtn);
+                                    hideModal(document.querySelector('.cancel'));
                                 }
                             })
                         })
                     }
+
                 }
             }
             showModal();
 
 
 
-            // function hideModal() {
-            //     cancelBtn.addEventListener('click', () => {
-            //         console.log("sam")
-            //         modal.style.display = "none";
-            //         overlay.style.display = "none";
-            //     })
-            // }
-
-            // hideModal()
+            function hideModal(cancel) {
+                cancel.addEventListener('click', () => {
+                    modal.style.display = "none";
+                    overlay.style.display = "none";
+                })
+            }
         })
 }
+
 setTimeout(getData, 12000);
 
 
+
+
+function switchTheme() {
+    themeIcon.classList.toggle('fa-moon');
+    document.body.classList.toggle('light-body-theme');
+    searchBar.classList.toggle('light-form-theme');
+    continentList.classList.toggle('light-form-theme');
+    searchDropdown.classList.toggle('light-search-select-bg');
+    if (themeBtnText.innerText === 'Light mode') {
+        themeBtnText.innerText = 'Dark mode';
+    } else {
+        themeBtnText.innerText = 'Light mode';
+    }
+}
+
+themeBtn.addEventListener('click', switchTheme);

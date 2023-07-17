@@ -43,13 +43,9 @@
  }
 
  .theme-toggler {
-     display: none;
+     display: flex;
      align-items: center;
      cursor: pointer;
- }
-
- .theme-toggler:hover .theme {
-     color: var(--offWhite);
  }
 
  .theme-toggler i {
@@ -81,6 +77,7 @@
      background: var(--blue);
      color: var(--offWhite);
  }
+
 
  .search-bar::placeholder {
      color: var(--lightBlue);
@@ -118,18 +115,10 @@
 
 
 
-
-
  @keyframes spin {
      100% {
          transform: rotate(360deg);
      }
- }
-
- .error-msg {
-     color: var(--lightBlue);
-     text-align: center;
-     width: 100%;
  }
 
  .country-card {
@@ -140,8 +129,6 @@
      transition: fade-in 2s ease-in-out;
      transition: transform 0.2s ease-in-out;
  }
-
-
 
 
 
@@ -193,17 +180,13 @@
      padding-block: 0 1.5rem;
  }
 
-
-
-
-
-
  .modal {
      display: none;
      position: fixed;
      padding: 3rem;
+     height: fit-content;
      z-index: 2;
-     top: 0;
+     top: 2rem;
      right: 0;
      bottom: 0;
      left: 0;
@@ -215,9 +198,35 @@
  .modal-body {
      display: grid;
      align-items: center;
-     gap: 2rem;
-     margin-block-start: 3rem;
+     gap: 3rem;
      grid-template-columns: 1fr;
+ }
+
+
+ .modal-body div {
+     padding: 0;
+     margin: -1rem 0 0 0;
+ }
+
+ .modal-name {
+     padding-block: 1.5rem 0;
+     margin: 0;
+     line-height: 2.3rem;
+     font-weight: 800;
+     font-size: 2rem;
+     color: var(--offWhite);
+     text-transform: uppercase;
+ }
+
+ .modal-capital,
+ .modal-population,
+ .modal-region,
+ .modal-subregion,
+ .modal-timezone {
+     margin: 0;
+     font-size: 1rem;
+     padding-block: 0.5rem 0;
+     color: var(--lightBlue);
  }
 
  .cancel {
@@ -226,12 +235,13 @@
  }
 
  .cancel-btn {
-    padding: 1rem;
-    border: 1px solid red;
+     font-size: 2rem;
+     padding: 1rem 0 1rem 1rem;
  }
 
  .flag {
      width: 100%;
+     height: fit-content;
      border-radius: 4px;
  }
 
@@ -244,18 +254,30 @@
      right: 0;
      bottom: 0;
      left: 0;
-     opacity: 0.5;
-     background-color: var(--blue);
+     opacity: 0.9;
+     background-color: var(--lightBlue);
  }
 
 
 
 
 
+ .light-body-theme {
+     background-color: var(--white);
+ }
 
+ .light-form-theme {
+     background-color: var(--lightBlue);
+     color: var(--offWhite);
+ }
 
+ .light-form-theme::placeholder {
+     color: var(--offWhite);
+ }
 
-
+ .light-search-select-bg {
+     background-color: transparent;
+ }
 
 
 
@@ -341,6 +363,24 @@
          margin: -6rem auto 0 auto;
          width: 400px;
      }
+
+     .light-body-theme {
+         background-color: var(--white);
+     }
+
+     .light-form-theme {
+         background-color: var(--lightBlue);
+         color: var(--offWhite);
+     }
+
+     .light-form-theme::placeholder {
+         color: var(--offWhite);
+     }
+
+     .light-search-select-bg {
+         background-color: var(--blue);
+     }
+
  }
 
 
@@ -349,8 +389,31 @@
          grid-template-columns: repeat(4, 1fr);
      }
 
+     .modal {
+         margin: 6rem 10rem 10rem 10rem;
+     }
+
      .modal-body {
          grid-template-columns: repeat(2, 1fr);
-         padding-block: 5rem;
+         padding-block: 0 4rem;
+     }
+
+     .modal-name {
+         padding-block: 1.5rem 0;
+         line-height: 3rem;
+         font-weight: 800;
+         font-size: 2.5rem;
+         color: var(--offWhite);
+         text-transform: uppercase;
+     }
+
+     .modal-capital,
+     .modal-population,
+     .modal-region,
+     .modal-subregion,
+     .modal-timezone {
+         font-size: 1rem;
+         padding-block: 0.5rem 0;
+         color: var(--lightBlue);
      }
  }
