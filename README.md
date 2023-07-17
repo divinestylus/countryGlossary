@@ -13,6 +13,8 @@
 <img src = "./assets/darkTheme.jpg" alt = "Country Glossary Project Logo" width = "100%">
 <img src = "./assets/lightTheme.jpg" alt = "Country Glossary Project Logo" width = "100%">
 
+<br>
+
 ## Tech Stack
 ###### HTML | CSS | JavaScript | API - [https://restcountries.com/](https://restcountries.com/)
 
