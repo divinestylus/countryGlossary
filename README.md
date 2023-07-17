@@ -19,10 +19,8 @@
 <br>
 
 #### Tech Stack
-###### HTML
-###### CSS
-###### JavaScript
-###### [API - ](https://restcountries.com/)
+###### HTML | CSS | JavaScript
+###### API - [https://restcountries.com/](https://restcountries.com/)
 
 
 
