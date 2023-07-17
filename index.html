@@ -1,52 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css">
-    <script src="./js/script.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Country Glossary App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="scripts/script.js"></script>
+    <title>Random User Generator</title>
 </head>
 
 <body>
-    <main class="wrapper">
-        <section class="hero-section">
-            <section class="navbar">
-                <img src="./assets/logo-01.png" alt="" class="app-name">
-                <div class="theme-toggler">
-                    <i class="fa-solid fa-sun theme"></i>
-                    <p class="theme">Light mode</p>
+    <main>
+        <div class="container">
+            <div class="wrapper">
+                <div class="card">
+                    <img src="" alt="Profile Image" class="user-image">
+                    <p class="name"><strong></strong> &nbsp;<span class="gender"></span></p>
+                    <p class="email"></p>
+                    <p class="date-of-birth"></p>
+                    <p class="country"><strong></strong><span class="nationality"></span></p>
                 </div>
-            </section>
-
-            <section class="search-dropdown">
-                <input type="text" class="search-bar" placeholder="Search">
-                <select>
-                    <option value="Africa" selected>Africa</option>
-                    <option value="North America">North America</option>
-                    <option value="South America">South America</option>
-                    <option value="Europe">Europe</option>
-                    <option value="Asia">Asia</option>
-                    <option value="Oceania">Oceania</option>
-                </select>
-            </section>
-        </section>
-        <section class="countries">
-            <img src="./assets/wordmark-02.png" alt="" class="wordmark">
-            <div class="country-list"></div>
-        </section>
-        <section class="modal">
-            <div class="cancel">
-                <i class="fa-solid fa-xmark cancel-btn"></i>
+                <div class="card">
+                    <img src="" alt="Profile Image" class="user-image">
+                    <p class="name"><strong></strong>&nbsp;<span class="gender"></span></p>
+                    <p class="email"></p>
+                    <p class="date-of-birth"></p>
+                    <p class="country"><strong></strong><span class="nationality"></span></p>
+                </div>
+                <div class="card">
+                    <img src="" alt="Profile Image" class="user-image">
+                    <p class="name"><strong></strong>&nbsp;<span class="gender"></span></p>
+                    <p class="email"></p>
+                    <p class="date-of-birth"></p>
+                    <p class="country"><strong></strong><span class="nationality"></span></p>
+                </div>
             </div>
-        </section>
-        <div class="overlay"></div>
+            <button class="generate-user">Generate User</button>
+        </div>
     </main>
 </body>
-
 </html>
