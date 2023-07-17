@@ -16,7 +16,7 @@
 <br>
 
 ## Tech Stack
-###### HTML | CSS | JavaScript | API - [https://restcountries.com/](https://restcountries.com/)
+#### HTML | CSS | JavaScript | API - [https://restcountries.com/](https://restcountries.com/)
 
 <br>
 <img src = "./assets/wordmark-02.png" alt = "Country Glossary Project Logo" width = "250px">
