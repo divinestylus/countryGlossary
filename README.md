@@ -4,6 +4,9 @@
 #### [Country Glossary](https://github.com/divinestylus/countryGlossary) - Geopolitical App
 ###### Country Glossary is a digital geopolitical application.
 
+<img src = "./assets/darkTheme.jpg" alt = "Country Glossary Project Logo" width = "500px">
+<img src = "./assets/lightTheme.jpg" alt = "Country Glossary Project Logo" width = "500px">
+
 ## Features
 #### Display Countries by Continents
 #### Essential Details About Countries
