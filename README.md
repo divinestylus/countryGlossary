@@ -6,8 +6,8 @@
 
 <br>
 
-<img src = "./assets/darkTheme.jpg" alt = "Country Glossary Project Logo" width = "500px">
-<img src = "./assets/lightTheme.jpg" alt = "Country Glossary Project Logo" width = "500px">
+<img src = "./assets/darkTheme.jpg" alt = "Country Glossary Project Logo" width = "100%">
+<img src = "./assets/lightTheme.jpg" alt = "Country Glossary Project Logo" width = "100%">
 
 <br>
 
